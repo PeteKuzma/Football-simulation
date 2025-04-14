@@ -7,7 +7,7 @@ import _pickle as cpk
 
 # list of (team, strength) tuples:
 
-fopen=open("/Users/peteKuzma/Documents/Software/EPL/premlist.pickle",'rb')
+fopen=open("/path/to/premlist.pickle",'rb')
 teams=cpk.load(fopen)
 fopen.close()
 
@@ -104,6 +104,6 @@ for i in range(total_rounds):
         exec(open("./table_test.py").read())
         #input("Enter to continue")
 
-fopen=open("/Users/petekuzma/Documents/Software/EPL/prem.pickle",'wb')
+fopen=open("/path/to/prem.pickle",'wb')
 cpk.dump(ranking,fopen)
 fopen.close()
