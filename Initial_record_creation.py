@@ -13,24 +13,7 @@ from functools import reduce
 import functools
 import _pickle as cpk
 import math
-"""
-fopen=open("/Users/pete/Documents/Software/EPL/DIV1.pickle",'rb')
-div1=cpk.load(fopen)
-fopen.close()
 
-fopen=open("/Users/pete/Documents/Software/EPL/prem.pickle",'rb')
-prem=cpk.load(fopen)
-fopen.close()
-
-def get_nth_key(dictionary, n=0):
-    if n < 0:
-        n += len(dictionary)
-    for i, key in enumerate(dictionary.keys()):
-        if i == n:
-            return key
-    raise IndexError("dictionary index out of range") 
-    
-"""
 
 teams_full = [("Middlesborough",10,9,"MDL",9.5),
 ("Sunderland",9,10,"SUN",9.5),
@@ -81,16 +64,15 @@ teams_full = [("Middlesborough",10,9,"MDL",9.5),
 
 
 
-fopen=open("/Users/petekuzma/Documents/Software/EPL/TEAM_LIST.pickle",'wb')
+fopen=open("/path/to/TEAM_LIST.pickle",'wb')
 cpk.dump(teams_full,fopen)
 fopen.close()
 
-fopen=open("/Users/petekuzma/Documents/Software/EPL/TEAM_LIST_orig.pickle",'wb')
+fopen=open("/path/to/TEAM_LIST_orig.pickle",'wb')
 cpk.dump(teams_full,fopen)
 fopen.close()
 
-fopen=open("/Users/pete/Documents/Software/EPL/TEAM_LIST_orig.pickle",'rb')
-#fopen=open("/Users/petekuzma/Documents/Software/EPL/TEAM_LIST.pickle",'rb')
+fopen=open("/path/to/TEAM_LIST_orig.pickle",'rb')
 teams_full=cpk.load(fopen)
 fopen.close()
 
@@ -102,9 +84,9 @@ for i in range(len(teams_full)):
     
 import os
 import shutil
-fdir="/Users/petekuzma/Documents/Software/EPL/TEAM_STATS.pickle"
-Pdir="/Users/petekuzma/Documents/Software/EPL/TEAM_PREM_STATS.pickle"
-Ddir="/Users/petekuzma/Documents/Software/EPL/TEAM_DIV1_STATS.pickle"
+fdir="/path/to/TEAM_STATS.pickle"
+Pdir="/path/to/TEAM_PREM_STATS.pickle"
+Ddir="/path/to/TEAM_DIV1_STATS.pickle"
 
 FULLDICT=dict()
 if os.path.isfile("TEAM_STATS.pickle") !=True:
@@ -388,7 +370,7 @@ for i in range(len(teamarray)):
     teamrrf.append(entry)
 teams_full=sorted(teamrrf,key=lambda x:x[4],reverse=True)
 
-fopen=open("/Users/pete/Documents/Software/EPL/TEAM_LIST.pickle",'wb')
+fopen=open("/path/to/TEAM_LIST.pickle",'wb')
 cpk.dump(teams_full,fopen)
 fopen.close()
 
@@ -415,7 +397,7 @@ for i in range(20):
         pds=pids[pids[:,0]==id2team[prem[i][0]][0]]
         premlist.append((pds[0][0],int(pds[0][1]),int(pds[0][2]),pds[0][3]))
  
-fopen=open("/Users/pete/Documents/Software/EPL/premlist.pickle",'wb')
+fopen=open("/path/to/premlist.pickle",'wb')
 cpk.dump(premlist,fopen)
 fopen.close()
 
@@ -459,19 +441,7 @@ for i in range(24):
         div1list.append((pds[0][0],int(pds[0][1]),int(pds[0][2]),pds[0][3]))
 
  
-fopen=open("/Users/pete/Documents/Software/EPL/div1list.pickle",'wb')
+fopen=open("/path/to/div1list.pickle",'wb')
 cpk.dump(div1list,fopen)
 fopen.close()
 
-'''
-#-----
-fopen=open("/Users/pete/Documents/Software/EPL/TEAM_LIST.pickle",'rb')
-f1=cpk.load(fopen)
-fopen.close()
-
-fopen=open("/Users/pete/Documents/Software/EPL/TEAM_LIST_orig.pickle",'rb')
-f2=cpk.load(fopen)
-fopen.close()
-for i in range(len(f1))
-#----
-'''
